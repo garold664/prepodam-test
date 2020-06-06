@@ -1,0 +1,62 @@
+.nav-btn {
+  @include button-reset;
+  position: relative;
+  z-index: 1500;
+  align-self: center;
+  display: block;
+  margin-left: auto;
+  margin-right: 30px;
+  outline: none;
+
+  width: 39px;
+  height: 26px;
+
+  @include tablet {
+    order: 10;
+    margin-right: 0;
+  }
+
+  @include desktop {
+    display: none;
+  }
+
+  &::before,
+  &::after,
+  &__bar {
+    @include transition(all);
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    margin-bottom: 0;
+    background-color: $color-white;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &__bar {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &::after {
+    bottom: 0;
+    margin-bottom: 0;
+  }
+
+  &--active {
+    .nav-btn__bar {
+      opacity: 0;
+    }
+
+    &::before {
+      top: 50%;
+      transform: rotate(45deg);
+      transform-origin: center center;
+    }
+  }
+}

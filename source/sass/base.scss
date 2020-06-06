@@ -62,25 +62,25 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
-.hidden {
-  display: none;
-}
+// .hidden {
+//   display: none;
+// }
 
-.hidden-desktop {
-  display: none;
+// .hidden-desktop {
+//   display: none;
 
-  @include mobile-wide {
-    display: block;
-  }
-}
+//   @include mobile-wide {
+//     display: block;
+//   }
+// }
 
-.hidden-mobile {
-  display: block;
+// .hidden-mobile {
+//   display: block;
 
-  @include mobile-wide {
-    display: none;
-  }
-}
+//   @include mobile-wide {
+//     display: none;
+//   }
+// }
 
 button {
   cursor: pointer;

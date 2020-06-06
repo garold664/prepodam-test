@@ -140,3 +140,7 @@
   }
 }
 
+@mixin transition($prop) {
+  transition: $prop $style-change-duration $style-change-function;
+}
+

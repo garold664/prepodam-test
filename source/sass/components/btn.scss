@@ -1,0 +1,22 @@
+.btn {
+  @include button-reset;
+  @include link-reset;
+  display: block;
+  max-width: 304px;
+  padding: 10px 34px;
+  border: 2px solid $color-orange;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+  @include transition(background-color);
+
+  &:hover {
+    background-color: $color-orange;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

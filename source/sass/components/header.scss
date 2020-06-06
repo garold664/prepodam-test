@@ -1,0 +1,318 @@
+.header {
+  background-image: url("../img/header-bg-mobile@1x.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #7f8b8e;
+
+  @include retina {
+    background-image: url("../img/header-bg-mobile@2x.jpg");
+  }
+
+  @include tablet {
+    position: relative;
+    background-position: center 0;
+    background-image: url("../img/header-bg@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/header-bg@2x.jpg");
+    }
+  }
+
+  @include desktop {
+    background-size: cover;
+    background-position: center 0;
+  }
+
+  &__container {
+    @include container;
+    padding-bottom: 60px;
+
+    @include tablet {
+      padding-bottom: 235px;
+    }
+
+    @include desktop {
+      padding-bottom: 305px;
+    }
+  }
+
+  &__top {
+    // position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 41px;
+    padding-bottom: 35px;
+
+    @include tablet {
+      position: relative;
+      justify-content: flex-start;
+      padding-top: 10px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    z-index: 1000;
+    top: 10px;
+    flex-shrink: 0;
+
+    @include tablet {
+      position: static;
+    }
+  }
+
+  &__top-wrap {
+    order: -2;
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      order: 1;
+      padding-top: 3px;
+      // padding-bottom: 10px;
+    }
+
+    @include desktop {
+      padding-top: 0;
+    }
+  }
+
+  &__nav-btn {
+    display: block;
+    order: 2;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__info {
+    display: flex;
+
+    @include tablet {
+      padding-left: 34px;
+      font-size: 14px;
+    }
+
+    @include desktop {
+      flex-shrink: 0;
+      padding-left: 42px;
+      font-size: 16px;
+    }
+  }
+
+  &__info-city {
+    @include link-reset;
+    flex-shrink: 0;
+    margin-left: 22px;
+
+    @include transition(color);
+
+    &:hover {
+      color: $color-orange;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+
+    @include tablet {
+      margin-left: 0;
+      margin-right: 23px;
+    }
+
+    @include desktop {
+      margin-right: 35px;
+    }
+  }
+
+  &__info-tel {
+    display: none;
+
+    @include link-reset;
+    flex-shrink: 0;
+    position: relative;
+    padding-left: 20px;
+    letter-spacing: 0.3px;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("../img/icon-phone@1x.png");
+
+      @include retina {
+        background-image: url("../img/icon-phone@2x.png");
+      }
+    }
+
+    &:hover {
+      &::before {
+        background-image: url("../img/icon-phone-active@1x.png");
+
+        @include retina {
+          background-image: url("../img/icon-phone-active@2x.png");
+        }
+      }
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-top: 52px;
+    text-align: center;
+
+    @include tablet {
+      max-width: 520px;
+      padding-top: 122px;
+      margin-right: 0;
+      margin-left: auto;
+      text-align: left;
+    }
+
+    @include desktop {
+      max-width: 630px;
+      padding-top: 120px;
+    }
+  }
+
+  &__title {
+    @include reset;
+    padding-bottom: 28px;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 800;
+
+    & span {
+      color: $color-orange;
+    }
+
+    @include tablet {
+      padding-bottom: 20px;
+      font-size: 36px;
+      line-height: 42px;
+      letter-spacing: 0.8px;
+    }
+
+    @include desktop {
+      font-size: 42px;
+      line-height: 48px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__text {
+    @include reset;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-family: $font-opensans;
+    font-size: 12px;
+    line-height: 16px;
+
+    @include tablet {
+      padding-left: 110px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @include desktop {
+      padding-left: 215px;
+      padding-right: 15px;
+      font-size: 16px;
+      line-height: 20px;
+
+      background-repeat: no-repeat;
+      background-size: 179px 65px;
+      background-position: 20px 5px;
+      background-image: url("../img/stars@1x.png");
+
+      @include retina {
+        background-image: url("../img/stars@2x.png");
+      }
+    }
+  }
+
+  &__btn {
+    margin: 50px auto 0;
+    background-color: $color-orange;
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    @include tablet {
+      margin-top: 25px;
+    }
+
+    @include desktop {
+      margin-right: 109px;
+      margin-top: 42px;
+    }
+  }
+
+  &__scrolldown {
+    display: none;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 27px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 27px;
+      height: 42px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("../img/icon-scrolldown.svg");
+    }
+
+    @include tablet {
+      position: absolute;
+      display: block;
+      bottom: 23px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    @include desktop {
+      bottom: 50px;
+      font-size: 12px;
+      line-height: 1;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+
+      &::before {
+        bottom: 30px;
+        width: 24px;
+        height: 39px;
+      }
+    }
+  }
+
+  &__scrolldown-text {
+    display: none;
+
+    @include desktop {
+      display: inline;
+    }
+  }
+}
