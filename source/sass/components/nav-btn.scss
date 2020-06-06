@@ -58,5 +58,11 @@
       transform: rotate(45deg);
       transform-origin: center center;
     }
+
+    &::after {
+      top: 50%;
+      transform: rotate(-45deg);
+      transform-origin: center center;
+    }
   }
 }

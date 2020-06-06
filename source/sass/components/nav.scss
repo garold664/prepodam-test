@@ -7,11 +7,12 @@
   flex-direction: column;
   padding: 138px 8px 10px;
   transform: translateX(0);
+  @include transition(transform);
 
   background-color: $color-dark;
 
   .menu-closed & {
-    @include transition(transform);
+    // @include transition(transform);
     transform: translateX(-100%);
   }
 
