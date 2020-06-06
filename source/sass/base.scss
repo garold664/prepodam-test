@@ -1,0 +1,116 @@
+html {
+  min-height: 100vh;
+  box-sizing: border-box; // глобальный box-sizing
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $font-mont;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 320px;
+  // для открытого меню
+  position: fixed;
+  overflow: hidden;
+
+  @include tablet {
+    position: static;
+    overflow: visible;
+    font-size: 16px;
+  }
+
+  @include desktop {
+    position: static;
+    overflow: visible;
+    font-size: 16px;
+  }
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; // глобальный box-sizing
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden-desktop {
+  display: none;
+
+  @include mobile-wide {
+    display: block;
+  }
+}
+
+.hidden-mobile {
+  display: block;
+
+  @include mobile-wide {
+    display: none;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+// .menu-closed.no-js {
+//   @include mobile {
+//     .header {
+//       position: static;
+//     }
+
+//     .header__container {
+//       flex-direction: column;
+//     }
+
+//     .nav {
+//       position: static;
+//       display: block;
+//       width: 100%;
+//       padding-top: 10px;
+//     }
+
+//     .header__nav-btn {
+//       display: none;
+//     }
+//   }
+// }
+
+.menu-closed {
+  position: static;
+  overflow: visible;
+}
+

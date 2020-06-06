@@ -1,0 +1,63 @@
+{
+  "name": "prepodam-test",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Тестовое задание для компании Преподам",
+  "devDependencies": {
+    "@htmlacademy/editorconfig-cli": "1.0.0",
+    "autoprefixer": "9.6.1",
+    "browser-sync": "2.26.7",
+    "del": "^5.0.0",
+    "eslint": "6.1.0",
+    "eslint-config-htmlacademy": "0.5.2",
+    "gh-pages": "^3.0.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-htmlmin": "5.0.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-newer": "^1.4.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "8.0.0",
+    "gulp-posthtml": "^3.0.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "4.0.2",
+    "gulp-svgmin": "^2.2.0",
+    "gulp-svgstore": "^7.0.1",
+    "gulp-uglify": "3.0.2",
+    "gulp-webp": "^4.0.1",
+    "imagemin-jpeg-recompress": "^6.0.0",
+    "posthtml-include": "^1.2.0",
+    "stylelint": "^10.1.0",
+    "stylelint-config-htmlacademy": "^0.1.4"
+  },
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/sass/components/**/*.scss\" --syntax scss",
+    "eslint": "eslint source/js/modules/",
+    "test": "npm run editorconfig && npm run stylelint && npm run eslint",
+    "build": "gulp build",
+    "start": "gulp start"
+  },
+  "browserslist": [
+    "last 5 versions",
+    "IE 11",
+    "Firefox ESR"
+  ],
+  "editorconfig-cli": [
+    "*.json",
+    "*.js",
+    "source/*.html",
+    "source/js/modules/*.js",
+    "source/img/**/*.svg",
+    "source/sass/**/*.{sass,scss}"
+  ],
+  "engines": {
+    "node": "8.12"
+  },
+  "dependencies": {
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify-es": "^2.0.0"
+  }
+}

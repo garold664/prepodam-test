@@ -1,0 +1,142 @@
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $laptop-width) {
+    @content;
+  }
+}
+
+@mixin max-width ($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin min-width ($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+@mixin reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+@mixin container ($width, $padding...) {
+  max-width: $width;
+  margin: 0 auto;
+  padding: $padding;
+}
+
+@mixin container {
+  $padding: 15px;
+  margin: 0 auto;
+  padding: 0 8px;
+
+  @include tablet {
+    max-width: 952px + $padding*2;
+    padding: 0 15px;
+  }
+
+  @include desktop {
+    padding: 0 $padding;
+    max-width: 1280px + $padding*2;
+  }
+}
+
+
+@mixin hover-focus-background-color ($color) {
+  transition: background-color $style-change-duration $style-change-function;
+
+  &:hover,
+  &:focus {
+    background-color: $color;
+  }
+}
+
+@mixin hover-background-color ($color) {
+  transition: background-color $style-change-duration $style-change-function;
+
+  &:hover {
+    background-color: $color;
+  }
+}
+
+@mixin hover-focus-color ($color) {
+  transition: color $style-change-duration $style-change-function;
+
+  &:hover,
+  &:focus {
+    color: $color;
+  }
+}
+
+@mixin hover-color ($color) {
+  transition: color $style-change-duration $style-change-function;
+
+  &:hover {
+    color: $color;
+  }
+}
+
+@mixin hover-focus-opacity {
+  transition: opacity $style-change-duration $style-change-function;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+}
+
+@mixin hover-opacity {
+  transition: opacity $style-change-duration $style-change-function;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
