@@ -1,0 +1,169 @@
+.program {
+  padding-top: 56px;
+  padding-bottom: 165px;
+
+  @include tablet {
+    padding-top: 105px;
+    padding-bottom: 115px;
+  }
+
+  @include desktop {
+    padding-top: 135px;
+    padding-bottom: 180px;
+  }
+
+  &__container {
+    padding: 0;
+
+    @include tablet {
+      @include container;
+      padding-bottom: 200px;
+    }
+  }
+
+  &__title {
+    @include reset;
+    padding-bottom: 45px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.3px;
+    color: $color-blue;
+
+    @include tablet {
+      padding-bottom: 75px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    @include desktop {
+      padding-bottom: 90px;
+      font-size: 30px;
+      line-height: 36px;
+      letter-spacing: 0.6px;
+    }
+  }
+
+  &__list.swiper-container {
+    @include tablet {
+      overflow-x: hidden;
+    }
+  }
+
+  &__list-wrap.swiper-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: auto;
+    overflow: visible;
+
+    @include tablet {
+      margin-left: -20px;
+    }
+  }
+
+  &__item.swiper-slide {
+    position: relative;
+    // flex-shrink: 1;
+    flex-grow: 0;
+    width: auto;
+    box-shadow: 0 3px 10px 0 rgba($color-black, 0.2);
+
+    @include tablet {
+      margin-left: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+  }
+
+  &__link {
+    @include link-reset;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    color: $color-white;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: transparent;
+    }
+  }
+
+  &__link-title {
+    @include transition(padding);
+    position: absolute;
+    bottom: 0;
+    top: auto;
+    left: 0;
+    right: 0;
+    max-height: 100%;
+    padding: 25px 60px 28px;
+    font-size: 18px;
+    line-height: 23px;
+    font-weight: 500;
+    text-align: center;
+    background-color: rgba($color-black, 0.5);
+
+    @include tablet {
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    @include desktop {
+      padding: 22px 80px 18px;
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__link:hover {
+    .program__link-title {
+      padding-top: 25px;
+      max-height: 100%;
+
+      @include tablet {
+        padding-top: 130%;
+      }
+
+      @include desktop {
+        padding-top: 145%;
+      }
+    }
+
+    @include tablet {
+      &::before {
+        background-color: $color-light-blue;
+      }
+
+      .program__link-title-main {
+        display: none;
+      }
+
+      .program__link-title-common {
+        display: inline;
+      }
+    }
+  }
+
+  &__link:active {
+    .program__link-title {
+      opacity: 0.7;
+    }
+  }
+
+  &__link-title-common {
+    display: none;
+  }
+}

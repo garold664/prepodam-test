@@ -1,0 +1,41 @@
+.main {
+  @include tablet {
+    padding-top: 112px;
+  }
+
+  @include desktop {
+    padding-top: 120px;
+  }
+
+  &__btn {
+    display: none;
+
+    @include tablet {
+      @include transition(all);
+      display: block;
+      max-width: 560px;
+      margin: 0 auto;
+      padding-bottom: 11px;
+      border-color: $color-orange2;
+      border-radius: 26px;
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 600;
+      text-transform: none;
+      color: $color-orange2;
+
+      &:hover {
+        color: $color-white;
+      }
+    }
+
+    @include desktop {
+      max-width: 700px;
+      padding-top: 16px;
+      padding-bottom: 15px;
+      border-radius: 30px;
+      font-size: 20px;
+      line-height: 25px;
+    }
+  }
+}
