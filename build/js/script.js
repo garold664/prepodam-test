@@ -8826,3 +8826,41 @@ navBtn.addEventListener('click', function (e) {
   }
 });
 
+// Слайдер
+
+var programList = document.querySelector('.program__list');
+
+var mySwiper;
+
+var initSwiper = function () {
+  mySwiper = new window.Swiper(programList, {
+    loop: true,
+    speed: 400,
+    spaceBetween: 28,
+    slidesPerView: 'auto',
+    effect: 'coverflow',
+    centeredSlides: true,
+    coverflowEffect: {
+      depth: 110,
+      rotate: 0,
+      slideShadows: false,
+    }
+  });
+};
+
+var breakpoint = window.matchMedia('(min-width: 982px)');
+
+var checkBreakpoints = function () {
+  if (breakpoint.matches === true) {
+    if (mySwiper !== undefined) {
+      mySwiper.destroy(true, true);
+    }
+    return;
+  } else if (breakpoint.matches === false) {
+    initSwiper();
+  }
+};
+
+breakpoint.addListener(checkBreakpoints);
+
+checkBreakpoints();
