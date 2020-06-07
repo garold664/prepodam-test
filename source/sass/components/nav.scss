@@ -1,4 +1,5 @@
 .nav {
+  @include transition(transform);
   position: absolute;
   top: 0;
   left: 0;
@@ -7,8 +8,6 @@
   flex-direction: column;
   padding: 138px 8px 10px;
   transform: translateX(0);
-  @include transition(transform);
-
   background-color: $color-dark;
 
   .menu-closed & {
@@ -162,6 +161,7 @@
 
     @include tablet {
       position: absolute;
+      z-index: 1500;
       top: 113px;
       right: 0;
       display: none;

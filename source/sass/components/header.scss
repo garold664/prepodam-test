@@ -11,16 +11,21 @@
   @include tablet {
     position: relative;
     background-position: center 0;
-    background-image: url("../img/header-bg@1x.jpg");
+    background-image: url("../img/header-bg-tablet@1x.jpg");
 
     @include retina {
-      background-image: url("../img/header-bg@2x.jpg");
+      background-image: url("../img/header-bg-tablet@2x.jpg");
     }
   }
 
   @include desktop {
     background-size: cover;
     background-position: center 0;
+    background-image: url("../img/header-bg-desktop@1x.jpg");
+
+    @include retina {
+      background-image: url("../img/header-bg-desktop@2x.jpg");
+    }
   }
 
   &__container {
@@ -98,7 +103,7 @@
 
     @include desktop {
       flex-shrink: 0;
-      padding-left: 42px;
+      padding-left: 39px;
       font-size: 16px;
     }
   }

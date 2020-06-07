@@ -109,8 +109,49 @@ button {
 //   }
 // }
 
+
 .menu-closed {
   position: static;
   overflow: visible;
 }
 
+.no-js.menu-closed {
+  @include mobile {
+    .header__top-wrap {
+      flex-direction: column;
+      padding-top: 100px;
+    }
+
+    .header__info-city {
+      margin: 0;
+      text-align: center;
+    }
+
+    .nav-btn {
+      display: none;
+    }
+
+    .nav {
+      position: static;
+      padding-top: 20px;
+      transform: none;
+      background-color: transparent;
+    }
+  }
+
+  @include tablet-wide {
+    .nav-btn {
+      display: none;
+    }
+
+    .nav__user-list {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      padding: 0;
+      padding-left: 10px;
+      background-color: transparent;
+      color: $color-white;
+    }
+  }
+}

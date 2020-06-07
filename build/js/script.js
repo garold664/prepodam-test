@@ -8805,7 +8805,7 @@ setTimeout(function () {
 
 navBtn.addEventListener('click', function (e) {
   var curTarget = e.currentTarget;
-  var pageBreakpoint = matchMedia('(min-width: 982px) and (max-width: 1309px');
+  var pageBreakpoint = matchMedia('(min-width: 982px) and (max-width: 1309px)');
 
   if (pageBreakpoint.matches) {
     navUserList.classList.toggle('nav__user-list--active');

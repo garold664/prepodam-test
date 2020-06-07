@@ -5,7 +5,19 @@
 }
 
 @mixin tablet {
-  @media (min-width: $laptop-width) {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $tablet-width - 1) {
+    @content;
+  }
+}
+
+@mixin tablet-wide {
+  @media (min-width: $tablet-width) and (max-width: $desktop-width - 1) {
     @content;
   }
 }
